@@ -3,77 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Solomon O. Falabake | Course Home Page">
-  <meta name="author" content="Solomon O. Falabake">
-  <title>WDD 131 – Dynamic Web Fundamentals – Solomon O. Falabake</title>
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals Home Page for Solomon Oluwadunsin Falabake">
+  <meta name="author" content="Solomon Oluwadunsin Falabake">
+  <title>WDD 131 – Dynamic Web Fundamentals | Solomon O. Falabake</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to Content</a>
+
   <header>
-    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+    <span class="course-title">WDD 131: Dynamic Web Fundamentals</span>
     <nav>
-      <a href="https://www.linkedin.com/in/solomon-falabake-24489878" target="_blank">LinkedIn</a>
-      <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
-      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank">Scripture</a>
-      <a href="#">Final Project</a>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="https://www.byui.edu/" target="_blank" rel="noopener">BYU-Idaho</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/" target="_blank" rel="noopener">Church</a></li>
+        <li><a href="#">Final Project</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-    <h1>Solomon O. Falabake</h1>
+  <main id="main" class="layout">
+    <h1>Solomon Oluwadunsin Falabake</h1>
 
-    <div class="cards">
-      <!-- Combined About Me + Country -->
-      <section class="card about-card">
-        <div class="card-header">About Me</div>
-        <div class="about-content">
+    <!-- ABOUT ME + COUNTRY -->
+    <section class="card">
+      <h2 class="card-header bordered">About Me</h2>
+
+      <div class="card-content">
+        <div class="about-grid">
           <p>
-            My name is Solomon Oluwadunsin Falabake and I go by Captainsky.
+            My name is <strong>Solomon Oluwadunsin Falabake</strong> and I go by Captainsky.
             I live in Lagos, Nigeria. I am passionate about technology,
             learning web development, and building useful digital solutions.
             I enjoy continuous learning and applying technology to solve
             real-world problems.
           </p>
-          <img src="images/mypassportimage.jpg" alt="Portrait of Solomon O. Falabake">
+
+          <img src="images/profile.jpg" alt="Portrait of Solomon Oluwadunsin Falabake" class="profile-img">
         </div>
 
         <div class="divider"></div>
 
-        <div class="card-header">Lagos, Nigeria</div>
-        <div class="country-content">
-          <img src="images/officialflagofnigeria.png" alt="Official Flag of Nigeria">
-          <p>
-            Nigeria is the most populous country in Africa and is known for its
-            rich cultural heritage, vibrant economy, and diverse people.
-            Lagos is the commercial hub of the nation and one of the
-            fastest-growing cities in the world.
-          </p>
-        </div>
-      </section>
+        <div class="country-grid">
+          <img src="images/nigeria-flag.png" alt="Official Flag of Nigeria" class="flag-img">
 
-      <!-- Web Dev Resources -->
-      <section class="card web-resources">
-        <div class="card-header">Web Dev Resources</div>
-        <ul class="resources-list">
-          <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
-          <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
-          <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
-          <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
-          <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
+          <div>
+            <h3>Nigeria</h3>
+            <p>
+              Nigeria is located in West Africa and is known for its cultural diversity,
+              strong entrepreneurial spirit, and vibrant population. It is often called
+              the “Giant of Africa.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEB DEV RESOURCES -->
+    <section class="card">
+      <h2 class="card-header colored">Web Dev Resources</h2>
+
+      <div class="card-content">
+        <ul class="resource-list">
+          <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+          <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
+          <li><a href="https://css-tricks.com/" target="_blank" rel="noopener">CSS-Tricks</a></li>
+          <li><a href="https://dev.to/" target="_blank" rel="noopener">Dev.to Community</a></li>
         </ul>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+   <footer>
     <p>
       ©️ <span id="currentyear"></span> 🔖Solomon O. Falabake 🔖 Nigeria
     </p>
