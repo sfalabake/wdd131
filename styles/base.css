@@ -113,9 +113,10 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
+    align-items: flex-start; /* ✔ valid */
     height: 100%;
 }
+
 
 /* --- ABOUT SECTION --- */
 .about-grid {
