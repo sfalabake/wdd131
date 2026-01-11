@@ -5,77 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WDD 131 - Dynamic Web Fundamentals Home Page - Solomon O. Falabake">
     <title>Solomon O. Falabake | WDD 131</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/base.css">
     <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    <header>
-        <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="https://www.linkedin.com/in/solomon-falabake-24489878" target="_blank">LinkedIn</a></li>
-                <li><a href="https://byupw.instructure.com/" target="_blank">Canvas</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank">Scripture</a></li>
-                <li><a href="#">Final Project</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Solomon Oluwadunsin Falabake</h1>
-        <div class="main-grid">
-            <section class="card">
-                <h2 class="card-header">About Me</h2>
-                <div class="card-content">
-                    <div class="about-grid">
+<header>
+    <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/solomon-falabake-24489878"
+                   target="_blank" rel="noopener noreferrer">
+                   LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="https://byupw.instructure.com/"
+                   target="_blank" rel="noopener noreferrer">
+                   Canvas
+                </a>
+            </li>
+            <li>
+                <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"
+                   target="_blank" rel="noopener noreferrer">
+                   Scripture
+                </a>
+            </li>
+            <li><a href="#">Final Project</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Solomon Oluwadunsin Falabake</h1>
+
+    <div class="main-grid">
+        <section class="card">
+            <h2 class="card-header">About Me</h2>
+            <div class="card-content">
+                <div class="about-grid">
+                    <p>
+                        My name is <strong>Solomon Oluwadunsin Falabake</strong>, though many know me by my nickname, Captainsky.
+                        I am currently a student deeply immersed in the world of technology and software development.
+                        My journey is driven by a profound fascination with how digital solutions can simplify human lives.
+                        Beyond coding, I am an advocate for continuous self-improvement and enjoy exploring the latest trends
+                        in web architecture. I believe that technology, when applied with empathy and logic, can solve the
+                        most complex real-world challenges.
+                    </p>
+
+                    <img src="images/profile.jpg"
+                         alt="Portrait of Solomon Oluwadunsin Falabake"
+                         class="profile-img">
+                </div>
+
+                <div class="country-heading">
+                    <span>Lagos, Nigeria</span>
+                </div>
+
+                <div class="country-grid">
+                    <div class="flag-box">
+                        <img src="images/nigeria-flag.png"
+                             alt="Official flag of Nigeria"
+                             class="flag-img">
+                        <p class="flag-caption">Official Flag of Nigeria</p>
+                    </div>
+
+                    <div class="country-details">
                         <p>
-                            My name is <strong>Solomon Oluwadunsin Falabake</strong>, though many know me by my nickname, Captainsky. I am currently a student deeply immersed in the world of technology and software development. My journey is driven by a profound fascination with how digital solutions can simplify human lives. 
-                            Beyond coding, I am an advocate for continuous self-improvement and enjoy exploring the latest trends in web architecture. I believe that technology, when applied with empathy and logic, can solve the most complex real-world challenges.
+                            Nigeria, often hailed as the <strong>"Giant of Africa,"</strong> is the continent's most populous nation
+                            and a powerhouse of cultural and economic influence. It is home to over 250 ethnic groups, creating
+                            a rich tapestry of languages, music, and traditions. Lagos, where I reside, is a bustling megacity
+                            and the economic heart of West Africa, famous for its tech hubs, vibrant nightlife, and
+                            entrepreneurial energy. Nigeria is also globally recognized for its massive film industry
+                            (Nollywood) and its significant contributions to global music and literature.
                         </p>
-                        <img src="images/profile.jpg" alt="Solomon O. Falabake" class="profile-img">
-                    </div>
-
-                    <div class="country-heading">
-                        <span>Lagos, Nigeria</span>
-                    </div>
-
-                    <div class="country-grid">
-                        <div class="flag-box">
-                            <img src="images/nigeria-flag.png" alt="Flag of Nigeria" class="flag-img">
-                            <p class="flag-caption">Official Flag of Nigeria</p>
-                        </div>
-                        <div class="country-details">
-                            <p>
-                                Nigeria, often hailed as the <strong>"Giant of Africa,"</strong> is the continent's most populous nation and a powerhouse of cultural and economic influence. It is home to over 250 ethnic groups, creating a rich tapestry of languages, music, and traditions. 
-                                Lagos, where I reside, is a bustling megacity and the economic heart of West Africa, famous for its tech hubs, vibrant nightlife, and entrepreneurial energy. Nigeria is also globally recognized for its massive film industry (Nollywood) and its significant contributions to global music and literature.
-                            </p>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <aside class="card sidebar">
-                <h2 class="card-header">Web Dev Resources</h2>
-                <div class="card-content centered-content">
-                    <ul class="resource-list">
-                        <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
-                        <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
-                        <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
-                        <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
-                        <li><a href="https://smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-    </main>
+        <aside class="card sidebar">
+            <h2 class="card-header">Web Dev Resources</h2>
+            <div class="card-content centered-content">
+                <ul class="resource-list">
+                    <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+                    <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
+                    <li><a href="https://dev.to/" target="_blank" rel="noopener noreferrer">Dev.to Community</a></li>
+                    <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener noreferrer">Smashing Magazine</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; <span id="currentyear"></span> 🔖 Solomon O. Falabake 🔖 Nigeria</p>
-        <p id="lastModified"></p>
-    </footer>
+<footer>
+    <p>&copy; <span id="currentyear"></span> Solomon O. Falabake | Nigeria</p>
+    <p id="lastModified"></p>
+</footer>
+
 </body>
 </html>
