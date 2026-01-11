@@ -7,11 +7,15 @@
   <meta name="author" content="Solomon Oluwadunsin Falabake">
   <title>WDD 131 – Dynamic Web Fundamentals | Solomon O. Falabake</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css">
+
+  <!-- JavaScript -->
   <script src="scripts/getdates.js" defer></script>
 </head>
 
@@ -19,7 +23,7 @@
   <a class="skip-link" href="#main">Skip to Content</a>
 
   <header>
-    <span class="course-title">WDD 131: Dynamic Web Fundamentals</span>
+    <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
     <nav>
       <ul class="nav-menu">
         <li><a href="#">Home</a></li>
@@ -31,12 +35,12 @@
     </nav>
   </header>
 
-  <main id="main" class="layout">
+  <main id="main">
     <h1>Solomon Oluwadunsin Falabake</h1>
 
     <!-- ABOUT ME + COUNTRY -->
     <section class="card">
-      <h2 class="card-header bordered">About Me</h2>
+      <h2 class="card-header colored">About Me</h2>
 
       <div class="card-content">
         <div class="about-grid">
@@ -51,7 +55,7 @@
           <img src="images/profile.jpg" alt="Portrait of Solomon Oluwadunsin Falabake" class="profile-img">
         </div>
 
-        <div class="divider"></div>
+        <hr class="divider">
 
         <div class="country-grid">
           <img src="images/nigeria-flag.png" alt="Official Flag of Nigeria" class="flag-img">
@@ -83,7 +87,7 @@
     </section>
   </main>
 
-   <footer>
+  <footer>
     <p>
       ©️ <span id="currentyear"></span> 🔖Solomon O. Falabake 🔖 Nigeria
     </p>
