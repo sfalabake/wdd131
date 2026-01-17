@@ -8,16 +8,22 @@ const nav = document.getElementById("primary-nav");
 
 if (menuButton && nav) {
   menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-controls", "primary-nav");
 
   menuButton.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
+
+    // Toggle icon
+    menuButton.textContent = isOpen ? "❎" : "☰";
+
+    // Update accessibility state
     menuButton.setAttribute("aria-expanded", isOpen);
   });
 
+  // Reset on desktop resize
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 600) {
       nav.classList.remove("open");
+      menuButton.textContent = "☰";
       menuButton.setAttribute("aria-expanded", "false");
     }
   });

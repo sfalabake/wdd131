@@ -5,9 +5,9 @@
   }
 
   nav ul {
-    display: flex;
-    flex-direction: row; /* HORIZONTAL */
-    gap: 1rem;
+    flex-direction: row; /* horizontal on desktop */
+    justify-content: flex-end;
+    padding-top: 0;
   }
 
   #menu-toggle {
