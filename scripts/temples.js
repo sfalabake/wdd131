@@ -1,11 +1,24 @@
-// Footer dynamic year and last modified date
+// Footer dates
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
-// Hamburger menu toggle
+// Menu toggle
 const menuButton = document.getElementById("menu-toggle");
-const navLinks = document.querySelector("nav");
+const nav = document.getElementById("primary-nav");
 
-menuButton.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+if (menuButton && nav) {
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-controls", "primary-nav");
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", isOpen);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 600) {
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  });
+}

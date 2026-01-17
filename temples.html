@@ -3,76 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Temple Album showcasing temples around the world.">
+
   <title>Temple Album</title>
+
+  <meta name="description"
+        content="Temple Album showcasing images of temples from different countries around the world.">
+  <meta name="author" content="Solomon Oluwadunsin Falabake">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+
   <!-- CSS -->
   <link rel="stylesheet" href="styles/temples.css">
   <link rel="stylesheet" href="styles/temples-large.css">
+
   <!-- JS -->
-  <script defer src="scripts/temples.js"></script>
+  <script src="scripts/temples.js" defer></script>
 </head>
+
 <body>
 
 <header>
-  <h1>Temple Album</h1>
-  <button id="menu-toggle">&#9776;</button>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Old</a>
-    <a href="#">New</a>
-    <a href="#">Large</a>
-    <a href="#">Small</a>
+  <h2>Temple Album</h2>
+
+  <button id="menu-toggle" aria-label="Open navigation menu">
+    &#9776;
+  </button>
+
+  <nav id="primary-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Old</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Large</a></li>
+      <li><a href="#">Small</a></li>
+    </ul>
   </nav>
 </header>
 
 <main>
-  <h1>Home</h1>
+  <!-- SINGLE REQUIRED h1 -->
+  <h1>Temple Album</h1>
+
   <div class="album-grid">
     <figure>
-      <img src="images/aba_nigeria_temple.jpeg" alt="Aba Nigeria Temple">
+      <img src="images/aba_nigeria_temple.jpeg" alt="Aba Nigeria Temple" loading="lazy">
       <figcaption>Aba Nigeria</figcaption>
     </figure>
+
     <figure>
-      <img src="images/abidjan_ivory_coast_temple.jpeg" alt="Abidjan Ivory Coast Temple">
+      <img src="images/abidjan_temple.jpeg" alt="Abidjan Ivory Coast Temple" loading="lazy">
       <figcaption>Abidjan Ivory Coast</figcaption>
     </figure>
+
     <figure>
-      <img src="images/adelaide_australia_temple.jpeg" alt="Adelaide Australia Temple">
+      <img src="images/adelaide_australia_temple.jpeg" alt="Adelaide Australia Temple" loading="lazy">
       <figcaption>Adelaide Australia</figcaption>
     </figure>
+
     <figure>
-      <img src="images/accra_ghana_temple.jpeg" alt="Accra Ghana Temple">
+      <img src="images/accra_ghana_temple.jpeg" alt="Accra Ghana Temple" loading="lazy">
       <figcaption>Accra Ghana</figcaption>
     </figure>
+
     <figure>
-      <img src="images/albuquerque_temple.jpeg" alt="Albuquerque Temple">
+      <img src="images/albuquerque_temple.jpeg" alt="Albuquerque Temple" loading="lazy">
       <figcaption>Albuquerque</figcaption>
     </figure>
+
     <figure>
-      <img src="images/anchorage_alaska_temple.jpeg" alt="Anchorage Alaska Temple">
+      <img src="images/anchorage_alaska_temple.jpeg" alt="Anchorage Alaska Temple" loading="lazy">
       <figcaption>Anchorage Alaska</figcaption>
     </figure>
+
     <figure>
-      <img src="images/arequipa_peru_temple.jpeg" alt="Arequipa Peru Temple">
+      <img src="images/arequipa_peru_temple.jpeg" alt="Arequipa Peru Temple" loading="lazy">
       <figcaption>Arequipa Peru</figcaption>
     </figure>
+
     <figure>
-      <img src="images/belem_brazil_temple.jpeg" alt="Belem Brazil Temple">
+      <img src="images/belem_brazil_temple.jpeg" alt="Belem Brazil Temple" loading="lazy">
       <figcaption>Belem Brazil</figcaption>
     </figure>
+
     <figure>
-      <img src="images/bern_switzerland_temple.jpeg" alt="Bern Switzerland Temple">
+      <img src="images/bern_switzerland_temple.jpeg" alt="Bern Switzerland Temple" loading="lazy">
       <figcaption>Bern Switzerland</figcaption>
     </figure>
   </div>
 </main>
 
 <footer>
-  &copy; <span id="year"></span> 🔖 Solomon Oluwadunsin Falabake 🔖 Nigeria <br>
+  &copy; <span id="year"></span>
+  <span aria-hidden="true">🔖</span>
+  Solomon Oluwadunsin Falabake
+  <span aria-hidden="true">🔖</span>
+  Nigeria<br>
   Last Modification: <span id="lastModified"></span>
 </footer>
 
