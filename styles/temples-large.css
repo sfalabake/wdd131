@@ -5,7 +5,8 @@
   }
 
   nav ul {
-    flex-direction: row;
+    display: flex;
+    flex-direction: row; /* HORIZONTAL */
     gap: 1rem;
   }
 
