@@ -17,13 +17,24 @@ header {
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* vertically center header text and menu button */
   padding: 1rem 1.5rem;
 }
 
+/* Header H2 */
 header h2 {
   font-size: 1.5rem;
   line-height: 1;
+  white-space: nowrap; /* keeps "Temple Album" on one line */
+}
+
+/* Menu Button */
+#menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* Navigation - Mobile */
@@ -41,13 +52,13 @@ nav ul {
   list-style: none;
   display: flex;
   flex-direction: column; /* vertical on mobile */
-  padding: 1rem 0; /* spacing above and below links */
+  padding: 1rem 0; /* spacing above/below links */
   gap: 0.75rem;
   text-align: center;
 }
 
 nav li {
-  padding: 0.5rem 0;
+  padding: 0.5rem 0; /* vertical spacing between links */
 }
 
 nav a {
@@ -61,15 +72,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Menu Button */
-#menu-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 /* Focus styles (accessibility) */
 a:focus-visible,
 button:focus-visible {
@@ -77,7 +79,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Main */
+/* Main content */
 main {
   max-width: 800px;
   margin: 2rem auto;
