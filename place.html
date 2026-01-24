@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nigeria</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Nigeria</h1>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="images/hero-large.webp" media="(min-width: 800px)">
+        <img src="images/hero-small.webp" alt="Thunderstorm over Nigeria" width="800" height="500">
+      </picture>
+
+      <!-- Data Card -->
+      <section class="data overlay">
+        <h2>Data</h2>
+        <ul>
+          <li><strong>Area:</strong> <span>923,768 sq km</span></li>
+          <li><strong>Population:</strong> <span>227,882,945</span></li>
+          <li><strong>Capital:</strong> <span>Abuja</span></li>
+          <li><strong>Language:</strong> <span>English</span></li>
+          <li><strong>Currency:</strong> <span>Nigerian Naira (₦)</span></li>
+          <li><strong>Time Zone:</strong> <span>UTC +1</span></li>
+          <li><strong>Calling Code:</strong> <span>+234</span></li>
+          <li><strong>Internet TLD:</strong> <span>.ng</span></li>
+        </ul>
+      </section>
+
+      <!-- Weather Card -->
+      <section class="weather overlay">
+        <h2>Weather</h2>
+
+        <!-- Mobile-only icon -->
+        <img src="images/weather.svg" alt="Weather Icon" class="weather-mobile-icon">
+
+        <div class="weather-container">
+          <ul>
+            <li><strong>Temperature:</strong> <span id="temp">28</span> °C</li>
+            <li><strong>Conditions:</strong> <span>Thunderstorm</span></li>
+            <li><strong>Wind:</strong> <span id="wind">15</span> km/h</li>
+            <li><strong>Wind Chill:</strong> <span id="windchill"></span></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> 🔖 Solomon Oluwadunsin Falabake 🔖 Nigeria</p>
+    <p>Last Modification: <span id="modified"></span></p>
+  </footer>
+</body>
+</html>

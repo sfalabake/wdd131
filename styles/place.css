@@ -1,0 +1,165 @@
+:root {
+  --primary: #008751;  /* Nigeria Green */
+  --secondary: #005c37;
+  --light: #ffffff;
+  --dark: #1a1a1a;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--dark);
+  background-color: #f0f0f0;
+}
+
+/* Header */
+header {
+  background-color: var(--primary);
+  color: var(--light);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 5px solid var(--secondary);
+}
+
+/* Hero Image */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay Cards */
+.overlay {
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 300px;
+  margin: 1rem auto;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+/* Card Headers */
+.overlay h2 {
+  background-color: var(--primary);
+  color: var(--light);
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.75rem 0;
+  margin: 0;
+  position: relative;
+}
+
+/* Data & Weather List Styling */
+.overlay ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+.overlay li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  flex-wrap: nowrap;
+}
+
+.overlay li strong {
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.overlay li span {
+  flex: 1;
+  text-align: left;
+  padding-left: 10px;
+  white-space: nowrap; /* keep value + unit together */
+}
+
+/* Weather Card - Mobile Icon Below Header */
+.weather-mobile-icon {
+  display: block;
+  width: 80px;
+  height: auto;
+  margin: 0.75rem auto 0 auto; /* centered under header */
+}
+
+/* Weather container */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* ==========================
+   Desktop Layout
+========================== */
+@media (min-width: 800px) {
+
+  /* Overlay cards absolute positioning */
+  .overlay {
+    width: 300px;
+    margin: 0;
+    position: absolute;
+  }
+
+  /* Data card top-left */
+  .data {
+    top: 2rem;
+    left: 2rem;
+  }
+
+  /* Weather card bottom-right */
+  .weather {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  /* Hide mobile icon on desktop */
+  .weather-mobile-icon {
+    display: none;
+  }
+
+  /* Show weather emoji in header on desktop */
+  .weather.overlay h2::after {
+    content: " ⛈️";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+  }
+
+  /* Weather container side-by-side on desktop */
+  .weather-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  color: var(--light);
+  text-align: center;
+  padding: 2rem;
+  border-top: 5px solid var(--secondary);
+}
