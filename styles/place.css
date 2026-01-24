@@ -40,7 +40,7 @@ header {
 
 /* Overlay Cards */
 .overlay {
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   width: 90%;
@@ -57,25 +57,22 @@ header {
   color: var(--light);
   text-align: center;
   font-size: 1.4rem;
-  padding: 0.75rem 0;
+  padding: 0.75rem;
   margin: 0;
-  position: relative;
 }
 
-/* Data & Weather List Styling */
+/* List styling (both data and weather) */
 .overlay ul {
   list-style: none;
   padding: 1rem;
   margin: 0;
-  width: 100%;
 }
 
 .overlay li {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  flex-wrap: nowrap;
+  font-size: 0.95rem;
 }
 
 .overlay li strong {
@@ -88,24 +85,7 @@ header {
   flex: 1;
   text-align: left;
   padding-left: 10px;
-  white-space: nowrap; /* keep value + unit together */
-}
-
-/* Weather Card - Mobile Icon Below Header */
-.weather-mobile-icon {
-  display: block;
-  width: 80px;
-  height: auto;
-  margin: 0.75rem auto 0 auto; /* centered under header */
-}
-
-/* Weather container */
-.weather-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  gap: 1rem;
+  white-space: nowrap; /* keeps number and unit together */
 }
 
 /* ==========================
@@ -113,45 +93,21 @@ header {
 ========================== */
 @media (min-width: 800px) {
 
-  /* Overlay cards absolute positioning */
+  /* Overlay Cards Absolute Position */
   .overlay {
     width: 300px;
     margin: 0;
     position: absolute;
   }
 
-  /* Data card top-left */
   .data {
     top: 2rem;
     left: 2rem;
   }
 
-  /* Weather card bottom-right */
   .weather {
     bottom: 2rem;
     right: 2rem;
-  }
-
-  /* Hide mobile icon on desktop */
-  .weather-mobile-icon {
-    display: none;
-  }
-
-  /* Show weather emoji in header on desktop */
-  .weather.overlay h2::after {
-    content: " ⛈️";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-  }
-
-  /* Weather container side-by-side on desktop */
-  .weather-container {
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
   }
 }
 
