@@ -3,10 +3,10 @@
     --secondary: #005c37;
     --light: #ffffff;
     --dark: #1a1a1a;
-    --overlay-bg: rgba(255, 255, 255, 0.85);
+    --overlay-bg: rgba(255, 255, 255, 0.8);
+    /* Semi-transparent like Madagascar */
 }
 
-/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,7 +16,6 @@
 body {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f4f4f4;
-    color: var(--dark);
 }
 
 header {
@@ -27,7 +26,6 @@ header {
     border-bottom: 5px solid var(--secondary);
 }
 
-/* Hero Image Styling */
 .hero {
     position: relative;
     display: flex;
@@ -40,104 +38,111 @@ header {
     display: block;
 }
 
-/* MOBILE VIEW STYLES (Default) */
+/* --- MOBILE VIEW (Clean Style) --- */
 .overlay {
     padding: 1rem;
     text-align: center;
-    /* Matches Madagascar mobile ref */
 }
 
 .overlay h2 {
     font-size: 1.8rem;
     margin: 1.5rem 0 1rem 0;
-    color: var(--dark);
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
 }
 
 .overlay ul {
     list-style: none;
-    padding: 0;
 }
 
 .overlay li {
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
-/* SVG Icon styling for mobile */
+.desktop-weather-icon {
+    display: none;
+    /* Hide desktop icon on mobile */
+}
+
 .weather-icon-container {
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .weather-icon {
-    width: 80px;
-    /* Constrained size */
+    width: 100px;
     height: auto;
 }
 
-/* DESKTOP VIEW STYLES */
+/* --- DESKTOP VIEW (Floating Boxes) --- */
 @media (min-width: 800px) {
-    .hero {
-        display: block;
-        /* Return to relative positioning for overlays */
-    }
-
     .overlay {
         position: absolute;
         background-color: var(--overlay-bg);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        width: 300px;
+        width: 280px;
         text-align: left;
         padding: 0;
-        /* Remove padding for header bar */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .overlay h2 {
         background-color: var(--primary);
         color: var(--light);
         margin: 0;
-        padding: 0.75rem;
+        padding: 0.5rem;
         font-size: 1.2rem;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* Space for the small icon */
     }
 
     .overlay ul {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
     .overlay li {
         display: flex;
         justify-content: space-between;
-        border: none;
         font-size: 0.9rem;
     }
 
-    /* Positions based on reference */
+    /* PLACEMENT */
     .data {
         top: 2rem;
         left: 2rem;
     }
 
     .weather {
-        top: 2rem;
+        bottom: 2rem;
+        /* Anchors to bottom right */
         right: 2rem;
+        top: auto;
+        /* Clears any top positioning */
     }
 
-    /* Hide the SVG icon on desktop per reference */
+    /* DESKTOP ICON LOGIC */
     .weather-icon-container {
         display: none;
+        /* Hide large mobile icon */
+    }
+
+    .desktop-weather-icon {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+    }
+
+    .desktop-weather-icon svg {
+        width: 100%;
+        height: 100%;
     }
 }
 
-/* Footer Styling */
 footer {
     background-color: var(--primary);
     color: var(--light);
     text-align: center;
     padding: 2rem;
-    margin-top: 2rem;
 }
