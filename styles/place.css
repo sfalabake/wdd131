@@ -77,7 +77,6 @@ header {
         background-color: var(--overlay-bg);
         width: 300px;
         text-align: left;
-        /* Alignment requested */
         padding: 0;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
@@ -133,7 +132,7 @@ header {
     }
 }
 
-/* --- FOOTER with required ::after rule --- */
+
 footer {
     background-color: var(--primary);
     color: var(--light);
