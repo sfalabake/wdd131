@@ -4,7 +4,6 @@
     --light: #ffffff;
     --dark: #1a1a1a;
     --overlay-bg: rgba(255, 255, 255, 0.8);
-    /* Semi-transparent like Madagascar */
 }
 
 * {
@@ -18,6 +17,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Centered Header for both Mobile and Desktop */
 header {
     background-color: var(--primary);
     color: var(--light);
@@ -60,7 +60,6 @@ header {
 
 .desktop-weather-icon {
     display: none;
-    /* Hide desktop icon on mobile */
 }
 
 .weather-icon-container {
@@ -79,36 +78,39 @@ header {
     .overlay {
         position: absolute;
         background-color: var(--overlay-bg);
-        width: 280px;
+        width: 300px;
         text-align: left;
         padding: 0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
+    /* Weather Header with Inline Icon */
     .overlay h2 {
         background-color: var(--primary);
         color: var(--light);
         margin: 0;
-        padding: 0.5rem;
-        font-size: 1.2rem;
+        padding: 0.75rem;
+        font-size: 1.3rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        /* Space for the small icon */
+        justify-content: center;
+        /* Centers text and icon together */
+        gap: 12px;
     }
 
     .overlay ul {
-        padding: 1rem;
+        padding: 1.2rem;
     }
 
     .overlay li {
         display: flex;
         justify-content: space-between;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
     }
 
-    /* PLACEMENT */
+    /* POSITIONING */
     .data {
         top: 2rem;
         left: 2rem;
@@ -116,22 +118,20 @@ header {
 
     .weather {
         bottom: 2rem;
-        /* Anchors to bottom right */
+        /* Bottom-Right placement */
         right: 2rem;
         top: auto;
-        /* Clears any top positioning */
     }
 
     /* DESKTOP ICON LOGIC */
     .weather-icon-container {
         display: none;
-        /* Hide large mobile icon */
     }
 
     .desktop-weather-icon {
         display: inline-block;
-        width: 25px;
-        height: 25px;
+        width: 28px;
+        height: 28px;
     }
 
     .desktop-weather-icon svg {
