@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nigeria – Country Information & Weather</title>
-  <meta name="description" content="Country information and weather details for Nigeria, including population, area, capital, and current weather.">
-  <meta name="author" content="Solomon Oluwadunsin Falabake">
-  <link rel="stylesheet" href="styles/place.css">
-  <script src="scripts/place.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria – Country Information & Weather</title>
+    <meta name="description" content="Country information and weather details for Nigeria.">
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
 </head>
+
 <body>
+    <header>
+        <h1>Nigeria</h1>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <h1>Nigeria</h1>
-  </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/hero-large.webp" media="(min-width: 800px)">
+                <img src="images/hero-small.webp" alt="Thunderstorm over Nigeria" width="800" height="500">
+            </picture>
 
-  <!-- Main Hero Section -->
-  <main>
-    <section class="hero">
-      <picture>
-        <source srcset="images/hero-large.webp" media="(min-width: 800px)">
-        <img src="images/hero-small.webp" alt="Thunderstorm over Nigeria" width="800" height="500">
-      </picture>
+            <section class="data overlay">
+                <h2>Data</h2>
+                <ul>
+                    <li><strong>Area:</strong> <span>923,768 sq km</span></li>
+                    <li><strong>Population:</strong> <span>227,882,945</span></li>
+                    <li><strong>Capital:</strong> <span>Abuja</span></li>
+                    <li><strong>Language:</strong> <span>English</span></li>
+                    <li><strong>Currency:</strong> <span>Nigerian Naira (₦)</span></li>
+                    <li><strong>Time Zone:</strong> <span>UTC +1</span></li>
+                    <li><strong>Calling Code:</strong> <span>+234</span></li>
+                    <li><strong>Internet TLD:</strong> <span>.ng</span></li>
+                </ul>
+            </section>
 
-      <!-- Data Card -->
-      <section class="data overlay">
-        <h2>Data</h2>
-        <ul>
-          <li><strong>Area:</strong> <span>923,768 sq km</span></li>
-          <li><strong>Population:</strong> <span>227,882,945</span></li>
-          <li><strong>Capital:</strong> <span>Abuja</span></li>
-          <li><strong>Language:</strong> <span>English</span></li>
-          <li><strong>Currency:</strong> <span>Nigerian Naira (₦)</span></li>
-          <li><strong>Time Zone:</strong> <span>UTC +1</span></li>
-          <li><strong>Calling Code:</strong> <span>+234</span></li>
-          <li><strong>Internet TLD:</strong> <span>.ng</span></li>
-        </ul>
-      </section>
+            <section class="weather overlay">
+                <h2>Weather</h2>
 
-      <!-- Weather Card (same style as data) -->
-      <section class="weather overlay">
-        <h2>Weather</h2>
-        <ul>
-          <li><strong>Temperature:</strong> <span id="temp">28</span></li>
-          <li><strong>Conditions:</strong> <span>Thunderstorm</span></li>
-          <li><strong>Wind:</strong> <span id="wind">15</span></li>
-          <li><strong>Wind Chill:</strong> <span id="windchill">N/A</span></li>
-        </ul>
-      </section>
-    </section>
-  </main>
+                <div class="weather-icon-container">
+                    <svg class="weather-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="20" fill="#FFC107" />
+                        <path d="M50 10v10M50 80v10M10 50h10M80 50h10M22 22l7 7M71 71l7 7M22 78l7-7M71 29l7-7"
+                            stroke="#FFC107" stroke-width="5" />
+                        <path d="M45 75a15 15 0 1 1 30 0h-30z" fill="#90A4AE" stroke="#37474F" stroke-width="2" />
+                    </svg>
+                </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© <span id="year"></span> 🔖 Solomon Oluwadunsin Falabake 🔖 Nigeria</p>
-    <p>Last Modification: <span id="modified"></span></p>
-  </footer>
+                <ul>
+                    <li><strong>Temperature:</strong> <span><span id="temp">10</span> <span
+                                class="unit">°C</span></span></li>
+                    <li><strong>Conditions:</strong> <span>Partly Cloudy</span></li>
+                    <li><strong>Wind:</strong> <span><span id="wind">5</span> <span class="unit">km/h</span></span></li>
+                    <li><strong>Wind Chill:</strong> <span><span id="windchill">9.8</span> <span
+                                class="unit">°C</span></span></li>
+                </ul>
+            </section>
+        </section>
+    </main>
 
+    <footer>
+        <p>© <span id="year"></span> 🔖 Solomon Oluwadunsin Falabake 🔖 Nigeria</p>
+        <p>Last Modification: <span id="modified"></span></p>
+    </footer>
 </body>
+
 </html>

@@ -1,26 +1,33 @@
-// Set current year
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
 
-// Set last modified date
-document.getElementById("modified").textContent = document.lastModified;
+    // Set current year and last modified
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("modified").textContent = document.lastModified;
 
-// Get temperature and wind values from HTML
-let tempValue = parseFloat(document.getElementById("temp").textContent) || 0;
-let windValue = parseFloat(document.getElementById("wind").textContent) || 0;
-const windChillSpan = document.getElementById("windchill");
+    const tempEl = document.getElementById("temp");
+    const windEl = document.getElementById("wind");
+    const chillEl = document.getElementById("windchill");
 
-// Wind Chill calculation
-function calculateWindChill(t, v) {
-  return (13.12 + 0.6215*t - 11.37*Math.pow(v,0.16) + 0.3965*t*Math.pow(v,0.16)).toFixed(1);
-}
+    const temp = parseFloat(tempEl.textContent.trim());
+    const wind = parseFloat(windEl.textContent.trim());
 
-// Update Wind Chill
-if (tempValue <= 10 && windValue > 4.8) {
-  windChillSpan.textContent = `${calculateWindChill(tempValue, windValue)}°C`;
-} else {
-  windChillSpan.textContent = "N/A";
-}
+    function calculateWindChill(t, v) {
+        return (
+            13.12 +
+            0.6215 * t -
+            11.37 * Math.pow(v, 0.16) +
+            0.3965 * t * Math.pow(v, 0.16)
+        ).toFixed(1);
+    }
 
-// Add units to temp and wind dynamically
-document.getElementById("temp").textContent = `${tempValue}°C`;
-document.getElementById("wind").textContent = `${windValue} km/h`;
+    // Calculate wind chill if conditions are met
+    if (!isNaN(temp) && !isNaN(wind) && temp <= 10 && wind > 4.8) {
+        chillEl.textContent = calculateWindChill(temp, wind);
+    } else {
+        chillEl.textContent = "N/A";
+    }
+
+    // Display temperature and wind without units (units are in HTML)
+    if (!isNaN(temp)) tempEl.textContent = temp.toFixed(1);
+    if (!isNaN(wind)) windEl.textContent = wind.toFixed(1);
+});

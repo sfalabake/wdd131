@@ -1,121 +1,143 @@
 :root {
-  --primary: #008751;  /* Nigeria Green */
-  --secondary: #005c37;
-  --light: #ffffff;
-  --dark: #1a1a1a;
+    --primary: #008751;
+    --secondary: #005c37;
+    --light: #ffffff;
+    --dark: #1a1a1a;
+    --overlay-bg: rgba(255, 255, 255, 0.85);
 }
 
 /* Reset */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: var(--dark);
-  background-color: #f0f0f0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: var(--dark);
 }
 
-/* Header */
 header {
-  background-color: var(--primary);
-  color: var(--light);
-  padding: 1.5rem;
-  text-align: center;
-  border-bottom: 5px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary);
 }
 
-/* Hero Image */
+/* Hero Image Styling */
 .hero {
-  position: relative;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero img {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Overlay Cards */
+/* MOBILE VIEW STYLES (Default) */
 .overlay {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 90%;
-  max-width: 300px;
-  margin: 1rem auto;
-  overflow: hidden;
-  z-index: 2;
-  position: relative;
+    padding: 1rem;
+    text-align: center;
+    /* Matches Madagascar mobile ref */
 }
 
-/* Card Headers */
 .overlay h2 {
-  background-color: var(--primary);
-  color: var(--light);
-  text-align: center;
-  font-size: 1.4rem;
-  padding: 0.75rem;
-  margin: 0;
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem 0;
+    color: var(--dark);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
 }
 
-/* List styling (both data and weather) */
 .overlay ul {
-  list-style: none;
-  padding: 1rem;
-  margin: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .overlay li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
 }
 
-.overlay li strong {
-  flex: 1;
-  text-align: right;
-  padding-right: 10px;
+/* SVG Icon styling for mobile */
+.weather-icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
 }
 
-.overlay li span {
-  flex: 1;
-  text-align: left;
-  padding-left: 10px;
-  white-space: nowrap; /* keeps number and unit together */
+.weather-icon {
+    width: 80px;
+    /* Constrained size */
+    height: auto;
 }
 
-/* ==========================
-   Desktop Layout
-========================== */
+/* DESKTOP VIEW STYLES */
 @media (min-width: 800px) {
+    .hero {
+        display: block;
+        /* Return to relative positioning for overlays */
+    }
 
-  /* Overlay Cards Absolute Position */
-  .overlay {
-    width: 300px;
-    margin: 0;
-    position: absolute;
-  }
+    .overlay {
+        position: absolute;
+        background-color: var(--overlay-bg);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: left;
+        padding: 0;
+        /* Remove padding for header bar */
+    }
 
-  .data {
-    top: 2rem;
-    left: 2rem;
-  }
+    .overlay h2 {
+        background-color: var(--primary);
+        color: var(--light);
+        margin: 0;
+        padding: 0.75rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
 
-  .weather {
-    bottom: 2rem;
-    right: 2rem;
-  }
+    .overlay ul {
+        padding: 1.2rem;
+    }
+
+    .overlay li {
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        font-size: 0.9rem;
+    }
+
+    /* Positions based on reference */
+    .data {
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .weather {
+        top: 2rem;
+        right: 2rem;
+    }
+
+    /* Hide the SVG icon on desktop per reference */
+    .weather-icon-container {
+        display: none;
+    }
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
-  background-color: var(--primary);
-  color: var(--light);
-  text-align: center;
-  padding: 2rem;
-  border-top: 5px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
 }
