@@ -9,13 +9,13 @@ let aCourse = {
     ]
 };
 
-// Set course name
+// Set course header
 function setCourseInformation(course) {
     document.querySelector("#courseName").textContent =
         `${course.code} – ${course.title}`;
 }
 
-// Render sections table
+// Render course sections table
 function renderSections(course) {
     const tbody = document.querySelector("#sections tbody");
     let html = "";
@@ -33,6 +33,6 @@ function renderSections(course) {
     tbody.innerHTML = html;
 }
 
-// Run functions
+// Call functions
 setCourseInformation(aCourse);
 renderSections(aCourse);
