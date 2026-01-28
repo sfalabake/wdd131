@@ -1,74 +1,76 @@
-// Temple Data Array
 const temples = [
     { templeName: "Aba Nigeria", location: "Aba, Nigeria", dedicated: "2005-08-07", area: 11500, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg" },
     { templeName: "Manti Utah", location: "Manti, Utah, United States", dedicated: "1888-05-21", area: 74792, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg" },
     { templeName: "Payson Utah", location: "Payson, Utah, United States", dedicated: "2015-06-07", area: 96630, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg" },
-    { templeName: "Yigo Guam", location: "Yigo, Guam", dedicated: "2020-05-02", area: 6861, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg" }
+    { templeName: "Yigo Guam", location: "Yigo, Guam", dedicated: "2020-05-02", area: 6861, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg" },
+    { templeName: "Washington D.C.", location: "Kensington, Maryland, United States", dedicated: "1974-11-19", area: 156558, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpg" },
+    { templeName: "Lima Perú", location: "Lima, Perú", dedicated: "1986-01-10", area: 9600, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg" },
+    { templeName: "Mexico City Mexico", location: "Mexico City, Mexico", dedicated: "1983-12-02", area: 116642, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg" },
+    // Student Additions
+    { templeName: "Salt Lake", location: "Salt Lake City, Utah", dedicated: "1893-04-06", area: 253015, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/salt-lake-temple-37762.jpg" },
+    { templeName: "Johannesburg South Africa", location: "Johannesburg, South Africa", dedicated: "1985-08-24", area: 19184, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/johannesburg-south-africa/400x250/johannesburg-south-africa-temple-lds-83166-wallpaper.jpg" },
+    { templeName: "Accra Ghana", location: "Accra, Ghana", dedicated: "2004-01-11", area: 17500, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana/400x250/accra-ghana-temple-758797-wallpaper.jpg" }
 ];
 
-// Footer Dates
+// Footer Scripts
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("modified").textContent = document.lastModified;
 
-// Menu Toggle
+// Responsive Menu
 const menuButton = document.getElementById("menu-toggle");
 const nav = document.getElementById("primary-nav");
 
-if (menuButton && nav) {
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        menuButton.textContent = isOpen ? "❎" : "☰";
-        menuButton.setAttribute("aria-expanded", isOpen);
-    });
+menuButton.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    menuButton.textContent = isOpen ? "❌" : "☰";
+    menuButton.setAttribute("aria-expanded", isOpen);
+});
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth >= 600) {
-            nav.classList.remove("open");
-            menuButton.textContent = "☰";
-            menuButton.setAttribute("aria-expanded", "false");
-        }
-    });
-}
-
-// Display Temples
-const templeContainer = document.getElementById("temple-cards");
-
-function displayTemples(list) {
-    templeContainer.innerHTML = "";
-    list.forEach(temple => {
+// Create Temple Cards Function
+function createTempleCards(filteredTemples) {
+    const container = document.getElementById("temple-cards");
+    container.innerHTML = "";
+    filteredTemples.forEach(temple => {
         const card = document.createElement("figure");
         card.innerHTML = `
-            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy" width="400" height="250">
+            <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy" width="400" height="250">
             <figcaption>
-                <strong>${temple.templeName}</strong><br>
-                <span>Location:</span> ${temple.location}<br>
-                <span>Dedicated:</span> ${temple.dedicated}<br>
-                <span>Size:</span> ${temple.area.toLocaleString()} sq ft
+                <strong>${temple.templeName}</strong>
+                <span>Location: ${temple.location}</span><br>
+                <span>Dedicated: ${temple.dedicated}</span><br>
+                <span>Area: ${temple.area.toLocaleString()} sq ft</span>
             </figcaption>
         `;
-        templeContainer.appendChild(card);
-        // Fade-in effect
-        setTimeout(() => card.classList.add('show'), 50);
+        container.appendChild(card);
     });
 }
 
 // Initial Display
-displayTemples(temples);
+createTempleCards(temples);
 
-// Filtering
-document.querySelectorAll('#primary-nav a').forEach(link => {
+// Filter Logic
+document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const filter = link.dataset.filter;
-        let filtered = temples;
+        const filter = e.target.dataset.filter;
+        let filtered;
 
-        if (filter === "old") filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
-        else if (filter === "new") filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
-        else if (filter === "large") filtered = temples.filter(t => t.area > 90000);
-        else if (filter === "small") filtered = temples.filter(t => t.area < 10000);
-        // "home" shows all temples
-
-        displayTemples(filtered);
+        switch (filter) {
+            case "old":
+                filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+                break;
+            case "new":
+                filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+                break;
+            case "large":
+                filtered = temples.filter(t => t.area > 90000);
+                break;
+            case "small":
+                filtered = temples.filter(t => t.area < 10000);
+                break;
+            default:
+                filtered = temples;
+        }
+        createTempleCards(filtered);
     });
 });
