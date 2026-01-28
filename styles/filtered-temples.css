@@ -1,0 +1,189 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4B0082;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+/* Menu Button */
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav {
+    display: none;
+    width: 100%;
+    background-color: #4B0082;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+nav.open {
+    max-height: 500px;
+    /* enough for all links */
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav li {
+    padding: 0.5rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Focus styles */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #FFD700;
+    outline-offset: 3px;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Album Grid */
+.album-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Temple Cards */
+.album-grid figure {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-grid figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.album-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #4B0082;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+figcaption span {
+    font-weight: 400;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+#year::after {
+    content: " 🔖";
+}
+
+/* Media Queries: Desktop Layout */
+@media (min-width: 600px) {
+    nav {
+        display: block;
+        max-height: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding-top: 0;
+    }
+
+    nav li {
+        padding: 0;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    header h2 {
+        font-size: 2rem;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
