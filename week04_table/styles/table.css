@@ -1,0 +1,59 @@
+/* Table Styles */
+table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Caption - positioned below the table as per the image */
+caption {
+    caption-side: bottom;
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Header styling - Solid Black */
+thead th {
+    background-color: #000;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 1px solid #333;
+}
+
+/* General cell styling */
+th,
+td {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+/* Row labels (Feature names) */
+tbody th {
+    text-align: left;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Zebra Striping using nth-child */
+/* Applies a light grey background to every even row */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Top-left corner cell styling */
+.empty-cell {
+    background-color: #000;
+    border: none;
+}
+
+/* Icon sizing */
+td {
+    font-size: 1.1rem;
+}
