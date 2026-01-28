@@ -8,13 +8,13 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
-    color: #333;
+    color: #333333;
 }
 
 /* Header */
 header {
     background-color: #4B0082;
-    color: white;
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,25 +31,21 @@ header h2 {
 #menu-toggle {
     background: none;
     border: none;
-    color: white;
+    color: #ffffff;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 /* Navigation */
 nav {
-    display: none;
-    width: 100%;
-    background-color: #4B0082;
     max-height: 0;
     overflow: hidden;
+    background-color: #4B0082;
     transition: max-height 0.3s ease-in-out;
 }
 
 nav.open {
     max-height: 500px;
-    /* enough for all links */
-    display: block;
 }
 
 nav ul {
@@ -66,7 +62,7 @@ nav li {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     padding: 0.25rem 0.5rem;
@@ -104,11 +100,16 @@ main h1 {
 
 /* Temple Cards */
 .album-grid figure {
-    background-color: white;
+    background-color: #ffffff;
     padding: 0.75rem;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.album-grid figure.show {
+    opacity: 1;
 }
 
 .album-grid figure:hover {
@@ -121,6 +122,7 @@ main h1 {
     height: auto;
     display: block;
     border-radius: 5px;
+    min-height: 150px;
 }
 
 figcaption {
@@ -133,13 +135,13 @@ figcaption {
 
 figcaption span {
     font-weight: 400;
-    color: #333;
+    color: #333333;
 }
 
 /* Footer */
 footer {
     background-color: #4B0082;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
@@ -150,11 +152,11 @@ footer {
     content: " 🔖";
 }
 
-/* Media Queries: Desktop Layout */
+/* Media Queries */
 @media (min-width: 600px) {
     nav {
-        display: block;
         max-height: none;
+        display: block;
     }
 
     nav ul {
@@ -185,5 +187,9 @@ footer {
     .album-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+    }
+
+    .album-grid figure {
+        padding: 1rem;
     }
 }
