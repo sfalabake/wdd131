@@ -1,0 +1,8 @@
+Website Project Subject
+Nigeria Country Information and Weather Website
+
+Brief Description of Planned Site Content
+The website will present general information about Nigeria, including the capital city, population, official language, currency, and national facts. It will also display current weather details such as temperature, weather conditions, wind speed, and visual weather icons using JavaScript for dynamic content.
+
+Reason for Choosing This Subject
+I chose this subject because it allows me to practice building a responsive and dynamic website using HTML, CSS, and JavaScript while working with real-world data. The topic is meaningful to me and provides a practical way to apply the skills learned in this course.

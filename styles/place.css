@@ -35,7 +35,7 @@ header {
     height: auto;
 }
 
-/* --- MOBILE VIEW (Clean, Centered Style) --- */
+/* --- MOBILE VIEW --- */
 .overlay {
     padding: 1rem;
     text-align: center;
@@ -70,7 +70,7 @@ header {
     height: auto;
 }
 
-/* --- DESKTOP VIEW (Floating, Left-Aligned Boxes) --- */
+/* --- DESKTOP VIEW  --- */
 @media (min-width: 800px) {
     .overlay {
         position: absolute;
@@ -99,7 +99,7 @@ header {
     .overlay li {
         display: flex;
         justify-content: flex-start;
-        /* Ensure left alignment */
+
         gap: 10px;
         font-size: 0.95rem;
         margin-bottom: 0.8rem;
