@@ -10,90 +10,14 @@
     <meta name="description"
         content="Website planning document for the Nigeria Country Information and Weather website project for WDD 131.">
 
+    <link rel="stylesheet" href="styles/siteplan.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* 🎨 Color Schema Implementation (Rubric Item 8) */
-        :root {
-            --primary-color: #008751;
-            /* Nigerian Green */
-            --secondary-color: #ffffff;
-            /* White */
-            --accent-color: #212121;
-            /* Dark Gray for text */
-            --heading-font: 'Montserrat', sans-serif;
-            --body-font: 'Open Sans', sans-serif;
-        }
-
-        body {
-            font-family: var(--body-font);
-            /* Typography Implementation (Rubric Item 10) */
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            color: var(--accent-color);
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: var(--heading-font);
-            color: var(--primary-color);
-        }
-
-        header h1 {
-            color: white;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .color-palette {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .box {
-            padding: 20px;
-            border: 1px solid #ccc;
-            flex: 1;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .wireframe-container img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-        }
-    </style>
+    <script src="scripts/siteplan.js" defer></script>
 </head>
 
 <body>
@@ -116,8 +40,7 @@
         <section>
             <h2>Site Purpose</h2>
             <p>The site serves as a digital gateway to Nigeria, providing users with essential national facts
-                (population, currency, history) and real-time weather data for major cities to help travelers and
-                citizens stay informed.</p>
+                (population, currency, history) and real-time weather data for major cities.</p>
         </section>
 
         <hr>
@@ -134,24 +57,20 @@
 
         <section>
             <h2>Color Scheme</h2>
-            <p>The colors chosen reflect the Nigerian national identity and provide high contrast for readability.</p>
+            <p>The colors chosen reflect the Nigerian national identity.</p>
             <div class="color-palette">
-                <div class="box" style="background-color: #008751; color: white;">Primary: #008751 (Green)</div>
-                <div class="box" style="background-color: #ffffff; color: #008751;">Secondary: #ffffff (White)</div>
-                <div class="box" style="background-color: #212121; color: white;">Accent: #212121 (Dark Gray)</div>
+                <div class="box color-primary">Primary: #008751 (Green)</div>
+                <div class="box color-secondary">Secondary: #ffffff (White)</div>
+                <div class="box color-accent">Accent: #212121 (Dark Gray)</div>
             </div>
-            <p>Green is used for headers and navigation; White is for page backgrounds; Dark Gray is for body text to
-                ensure accessibility.</p>
         </section>
 
         <hr>
 
         <section>
             <h2>Typography</h2>
-            <p><strong>Headings:</strong> Montserrat (Sans-serif) - used for all H1, H2, and H3 elements for a bold,
-                authoritative feel.</p>
-            <p><strong>Body Text:</strong> Open Sans (Sans-serif) - used for all paragraphs and list items for high
-                legibility.</p>
+            <p><strong>Headings:</strong> Montserrat (Sans-serif)</p>
+            <p><strong>Body Text:</strong> Open Sans (Sans-serif)</p>
         </section>
 
         <hr>
@@ -161,12 +80,10 @@
             <p>Mobile and Desktop layouts for the Home Page:</p>
             <div class="wireframe-container">
                 <h3>Mobile View</h3>
-                <img src="images/wireframe_mobile.png" alt="Mobile Wireframe Diagram">
-
+                <img src="images/wireframe_mobile.png" alt="Mobile Wireframe Diagram" loading="lazy">
 
                 <h3>Desktop View</h3>
-                <img src="images/wireframe_desktop.png" alt="Desktop Wireframe Diagram">
-
+                <img src="images/wireframe_desktop.png" alt="Desktop Wireframe Diagram" loading="lazy">
             </div>
         </section>
     </main>
@@ -175,11 +92,6 @@
         <p>&copy; <span id="currentyear"></span> | Solomon Oluwadunsin Falabake | Nigeria</p>
         <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
-
-    <script>
-        document.getElementById('currentyear').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = document.lastModified;
-    </script>
 </body>
 
 </html>
