@@ -1,8 +1,12 @@
-const select = document.querySelector("#product");
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const productSelect = document.getElementById("product");
 
-products.forEach(product => {
-    const option = document.createElement("option");
-    option.value = product.id;
-    option.textContent = product.name;
-    select.appendChild(option);
+    // Populate the select element with products from products.js
+    products.forEach(product => {
+        const option = document.createElement("option");
+        option.value = product.id;
+        option.textContent = product.name; // The text the user sees
+        productSelect.appendChild(option);
+    });
 });

@@ -3,19 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Solomon Falabake">
-    <meta name="description" content="Review Confirmation">
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+    <meta name="description" content="Review Confirmation - Thank you for your feedback.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Submitted</title>
+    <title>Review Submitted | Solomon Falabake</title>
     <link rel="stylesheet" href="styles/form.css">
     <script defer src="scripts/review.js"></script>
 </head>
 
 <body>
+    <header>
+    </header>
+
     <main class="confirmation">
         <h1>Thank You!</h1>
-        <p>Your review has been submitted.</p>
+        <p>Your review has been successfully submitted.</p>
         <p id="counter"></p>
+        <a href="index.html" class="back-link">Return to Home</a>
     </main>
 
     <footer>
@@ -24,6 +28,7 @@
     </footer>
 
     <script>
+        // Footer Date and Modification Script
         document.getElementById('year').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = document.lastModified;
     </script>
