@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
-    <meta name="description" content="WDD 131 Product Review Form">
+    <meta name="description"
+        content="Official Product Review form for WDD 131. Please share your feedback and ratings for our products to help us improve our service quality.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review | Solomon Oluwadunsin Falabake</title>
     <link rel="stylesheet" href="styles/form.css">
+    <script defer src="scripts/getdates.js"></script>
     <script defer src="scripts/products.js"></script>
     <script defer src="scripts/form.js"></script>
 </head>
@@ -19,7 +21,6 @@
 
     <main>
         <form method="get" action="review.html">
-
             <label for="product">Product Name</label>
             <select id="product" name="product" required>
                 <option value="" disabled selected>Choose a Product ...</option>
@@ -29,24 +30,29 @@
                 <legend>Overall Rating</legend>
                 <div class="rating-container">
                     <div class="rating-item">
-                        <span>★</span>
-                        <input type="radio" name="rating" value="1" required>
+                        <span id="star1">★</span>
+                        <input type="radio" id="rating1" name="rating" value="1" required aria-labelledby="star1">
+                        <label for="rating1">1</label>
                     </div>
                     <div class="rating-item">
-                        <span>★★</span>
-                        <input type="radio" name="rating" value="2">
+                        <span id="star2">★★</span>
+                        <input type="radio" id="rating2" name="rating" value="2" required aria-labelledby="star2">
+                        <label for="rating2">2</label>
                     </div>
                     <div class="rating-item">
-                        <span>★★★</span>
-                        <input type="radio" name="rating" value="3">
+                        <span id="star3">★★★</span>
+                        <input type="radio" id="rating3" name="rating" value="3" required aria-labelledby="star3">
+                        <label for="rating3">3</label>
                     </div>
                     <div class="rating-item">
-                        <span>★★★★</span>
-                        <input type="radio" name="rating" value="4">
+                        <span id="star4">★★★★</span>
+                        <input type="radio" id="rating4" name="rating" value="4" required aria-labelledby="star4">
+                        <label for="rating4">4</label>
                     </div>
                     <div class="rating-item">
-                        <span>★★★★★</span>
-                        <input type="radio" name="rating" value="5">
+                        <span id="star5">★★★★★</span>
+                        <input type="radio" id="rating5" name="rating" value="5" required aria-labelledby="star5">
+                        <label for="rating5">5</label>
                     </div>
                 </div>
             </fieldset>
@@ -55,21 +61,32 @@
             <input type="date" id="installDate" name="installDate" required>
 
             <fieldset class="features-fieldset">
-                <legend>Which features did you find useful in the product? <br><em>(Check all that apply)</em></legend>
-                <label><input type="checkbox" name="features" value="durability"> Durability</label>
-                <label><input type="checkbox" name="features" value="ease"> Ease of Use</label>
-                <label><input type="checkbox" name="features" value="performance"> Performance</label>
-                <label><input type="checkbox" name="features" value="design"> Design</label>
+                <legend>Which features did you find useful? (Check all that apply)</legend>
+                <div class="feature-item">
+                    <input type="checkbox" id="durability" name="features" value="durability">
+                    <label for="durability">Durability</label>
+                </div>
+                <div class="feature-item">
+                    <input type="checkbox" id="ease" name="features" value="ease">
+                    <label for="ease">Ease of Use</label>
+                </div>
+                <div class="feature-item">
+                    <input type="checkbox" id="performance" name="features" value="performance">
+                    <label for="performance">Performance</label>
+                </div>
+                <div class="feature-item">
+                    <input type="checkbox" id="design" name="features" value="design">
+                    <label for="design">Design</label>
+                </div>
             </fieldset>
 
-            <label for="review" class="blue-label">Written Review <span>(Optional)</span></label>
+            <label for="review">Written Review (Optional)</label>
             <textarea id="review" name="review" rows="6"></textarea>
 
-            <label for="username" class="blue-label">Your Name <span>(Optional)</span></label>
+            <label for="username">Your Name (Optional)</label>
             <input type="text" id="username" name="username">
 
             <input type="submit" value="Post Review">
-
         </form>
     </main>
 
@@ -77,11 +94,6 @@
         <p>©<span id="year"></span> 🔖 Solomon Oluwadunsin Falabake 🔖 Nigeria</p>
         <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = document.lastModified;
-    </script>
 </body>
 
 </html>
