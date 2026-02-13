@@ -17,7 +17,8 @@ header {
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* vertically center header text and menu button */
+  align-items: center;
+  /* vertically center header text and menu button */
   padding: 1rem 1.5rem;
 }
 
@@ -25,7 +26,8 @@ header {
 header h2 {
   font-size: 1.5rem;
   line-height: 1;
-  white-space: nowrap; /* keeps "Temple Album" on one line */
+  white-space: nowrap;
+  /* keeps "Temple Album" on one line */
 }
 
 /* Menu Button */
@@ -51,21 +53,25 @@ nav.open {
 nav ul {
   list-style: none;
   display: flex;
-  flex-direction: column; /* vertical on mobile */
-  padding: 1rem 0; /* spacing above/below links */
+  flex-direction: column;
+  /* vertical on mobile */
+  padding: 1rem 0;
+  /* spacing above/below links */
   gap: 0.75rem;
   text-align: center;
 }
 
 nav li {
-  padding: 0.5rem 0; /* vertical spacing between links */
+  padding: 0.5rem 0;
+  /* vertical spacing between links */
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.25rem 0.5rem; /* clickable padding */
+  padding: 0.25rem 0.5rem;
+  /* clickable padding */
 }
 
 nav a:hover {
@@ -107,7 +113,7 @@ main h1 {
 
 .album-grid img {
   width: 100%;
-  height: auto;
+  height: 150px;
   display: block;
   border-radius: 5px;
 }
@@ -126,4 +132,9 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+img {
+  width: 150px;
+  height: 150px;
 }

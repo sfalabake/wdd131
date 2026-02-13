@@ -5,14 +5,18 @@
   }
 
   nav ul {
-    flex-direction: row; /* horizontal menu */
-    justify-content: flex-end; /* push links to right */
+    flex-direction: row;
+    /* horizontal menu */
+    justify-content: flex-end;
+    /* push links to right */
     padding-top: 0;
-    gap: 2rem; /* spacing between desktop links */
+    gap: 2rem;
+    /* spacing between desktop links */
   }
 
   nav li {
-    padding: 0; /* remove mobile padding */
+    padding: 0;
+    /* remove mobile padding */
   }
 
   #menu-toggle {
@@ -20,7 +24,8 @@
   }
 
   header h2 {
-    white-space: nowrap; /* keeps "Temple Album" on one line */
+    white-space: nowrap;
+    /* keeps "Temple Album" on one line */
   }
 
   .album-grid {
