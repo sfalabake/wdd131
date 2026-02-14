@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria Info & Weather Hub | Cities</title>
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+    <meta name="description" content="Explore major cities in Nigeria including population and regional information.">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Nigeria Cities</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cities.html">Cities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>City Directory</h2>
+
+            <label for="regionFilter">Filter by Region:</label>
+            <select id="regionFilter">
+                <option value="All">All</option>
+                <option value="FCT">FCT</option>
+                <option value="South West">South West</option>
+                <option value="North West">North West</option>
+            </select>
+
+            <div id="citiesContainer" class="cities-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> | Solomon Oluwadunsin Falabake | Nigeria</p>
+        <p><a href="references.html">References</a></p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

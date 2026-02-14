@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaijaInfo & Weather Hub | Home</title>
+
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+    <meta name="description"
+        content="NaijaInfo & Weather Hub: Discover essential facts about Nigeria's geography, culture, and real-time weather updates for major cities.">
+
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>NaijaInfo & Weather Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="cities.html">Cities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-grid">
+        <section class="hero">
+            <img src="images/nigeria-landscape.jpg"
+                alt="Panoramic view of the Nigerian landscape during the lush rainy season" loading="lazy" width="1200"
+                height="600">
+            <div class="hero-label">Explore the Giant of Africa</div>
+        </section>
+
+        <section class="country-card">
+            <h2>About Nigeria</h2>
+            <div id="countryInfo">
+                <p><strong>The Giant of Africa:</strong> Nigeria is a vibrant nation on the Gulf of Guinea, known for
+                    its massive economy and rich cultural diversity. With over 250 ethnic groups, it is a melting pot of
+                    traditions, music, and innovation.</p>
+                <p><strong>Geography & Climate:</strong> From the tropical rainforests in the South to the arid plains
+                    of the North, Nigeria's weather is as diverse as its people. The country primarily experiences a
+                    rainy season and a dry season, influenced by the <em>Harmattan</em> trade winds from the Sahara.</p>
+                <ul class="quick-facts">
+                    <li><strong>Capital:</strong> Abuja</li>
+                    <li><strong>Largest City:</strong> Lagos</li>
+                    <li><strong>Currency:</strong> Nigerian Naira (₦)</li>
+                    <li><strong>Official Language:</strong> English</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="weather-card">
+            <h2>City Weather</h2>
+            <p>Get current conditions for Nigeria's major urban centers.</p>
+            <div class="selection-group">
+                <label for="citySelect">Select a City:</label>
+                <select id="citySelect">
+                    <option value="" disabled selected>-- Choose a City --</option>
+                </select>
+            </div>
+            <div id="weatherOutput" class="weather-display">
+                <p class="placeholder-text">Please select a city to view weather details.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> | Solomon Oluwadunsin Falabake | Nigeria</p>
+        <p><a href="references.html">References</a></p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+/* ============================= */
+/* 🎨 VARIABLES */
+/* ============================= */
+
+:root {
+    /* Updated for WCAG AA Contrast Compliance */
+    --primary-color: #007043;
+    /* Slightly darker green for better text readability */
+    --secondary-color: #ffffff;
+    --accent-color: #212121;
+    --light-gray: #f4f4f4;
+
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+
+    --border-radius: 8px;
+}
+
+/* ============================= */
+/* 🌍 GLOBAL RESET & ACCESSIBILITY */
+/* ============================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    line-height: 1.6;
+    background-color: var(--light-gray);
+    color: var(--accent-color);
+}
+
+/* Clear focus indicators for keyboard accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+/* ============================= */
+/* 🧭 HEADER & NAV */
+/* ============================= */
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--heading-font);
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Prevents overlap on small mobile screens */
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    /* Larger touch target for mobile usability */
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Visual cue for the current page */
+nav a.active {
+    border-bottom: 3px solid white;
+}
+
+/* ============================= */
+/* 📄 MAIN CONTENT */
+/* ============================= */
+
+main {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ============================= */
+/* 🧱 CARD COMPONENT (PARC Principles) */
+/* ============================= */
+
+.country-card,
+.weather-card,
+.city-card,
+form,
+section {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* ============================= */
+/* 🖼 HERO IMAGE & MEDIA */
+/* ============================= */
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+    object-fit: cover;
+}
+
+/* ============================= */
+/* 🏙 CITIES DIRECTORY */
+/* ============================= */
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive grid without media queries */
+    gap: 1.5rem;
+}
+
+.city-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* ============================= */
+/* 📝 FORM STYLING */
+/* ============================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    padding: 0.8rem;
+    /* Improved for touch usability */
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #005a36;
+}
+
+/* ============================= */
+/* 🦶 FOOTER */
+/* ============================= */
+
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #00ff95;
+    /* High contrast link color for dark background */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* 💻 DESKTOP LAYOUT (768px+) */
+/* ============================= */
+
+@media (min-width: 768px) {
+    .home-grid {
+        display: grid;
+        /* 1fr for sidebar (facts), 2fr for Hero, 1fr for Weather Hub */
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    /* Hero takes the center spot in the grid */
+    .hero {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .country-card {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .weather-card {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    nav ul {
+        gap: 40px;
+    }
+}
